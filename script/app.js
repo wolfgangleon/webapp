@@ -4,6 +4,10 @@ $(document).ready(function(){
 		$(this).toggleClass('active');
 	});
 
+	$('#interactive .navbar-brand').on('click', function() {
+		location.reload();
+	})
+
 	$('#select-activities .btn').on('click', function(){
 
 		var activity = $(this).html();
@@ -14,10 +18,9 @@ $(document).ready(function(){
 		$('#location').focus();
 	})
 
-	$('#interactive .navbar-brand').on('click', function() {
-		location.reload();
+	$('#get-location').submit(function() {
+		$('#results dl').fadeIn();
 	})
-
 
 
 });

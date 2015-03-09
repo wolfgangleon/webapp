@@ -28,7 +28,6 @@
 
 		<nav class="navbar navbar-default">
 		  <div class="container-fluid">
-		    <!-- Brand and toggle get grouped for better mobile display -->
 		    <div class="navbar-header">
 		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 		        <span class="sr-only">Toggle navigation</span>
@@ -39,15 +38,15 @@
 		      <a class="navbar-brand" href="#">CrossRoads</a>
 		    </div>
 
-		    <!-- Collect the nav links, forms, and other content for toggling -->
+		    
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		      <ul class="nav navbar-nav">
 		      	<li><a href="#"> What?</a></li>
 		        <li><a href="#">Contact <span class="sr-only">(current)</span></a></li>
 		        <li><a href="#">Help</a></li>
 		      </ul>
-		    </div><!-- /.navbar-collapse -->
-		  </div><!-- /.container-fluid -->
+		    </div>
+		  </div>
 		</nav>
 
 		
@@ -80,12 +79,12 @@
 			<div id="type-location">
 				<form class="form-inline row" id="get-location" onsubmit="return false">
 					<div class="form-group col-md-6">
-						<label for="selected-activity">Selected Activity:</label><br>
+						<label for="selected-activity">Activity:</label><br>
 						<button type="text" class="form-control" id="selected-activity" disabled="disabled" ></button>
 					</div>
 					<div class="form-group col-md-6">
 						<label for="location">Location:</label><br>
-					    <input type="text" class="form-control" id="location" placeholder="Type your city. Ex: Miami">
+					    <input type="text" class="form-control" id="location" placeholder="Type your city. Ex: Miami" required>
 					    <button type="submit" class="btn btn-default" id="submit-search">Search</button>
 					</div>
 					
@@ -94,11 +93,35 @@
 
 		</div>
 
-	</div>
+		<div id="results">
 
-	<div id="results">
+			<div id="map"></div>
 
-		<div id="map"></div>
+			<dl class="row" id="list-result">
+			
+				<img class='thumbnail col-md-2' src="http://images.singletracks.com/2014/01/IMG_1053-0.jpg" height="140px" width="140px" alt="">
+				<dt class='col-md-4'>Bird Basin Park</dt>
+				 	<dd class='col-md-6'>Miami, Florida, United States <br> Best to do is park on the side road adjacent to Bird Road. Find an...</dd>
+			
+				<img class='thumbnail col-md-2'  src="http://images.singletracks.com/2014/01/IMG_1053-0.jpg" height="140px" width="140px" alt="">
+				<dt class='col-md-4'>Florida City, Southern Glades Trail</dt>
+					<dd class='col-md-6'>Miami, Florida, United States <br> Terrain: Largely flat but rough, can be technical where limestone is abundant.The North trail is...</dd>
+				
+				<img class='thumbnail col-md-2'  src="http://images.singletracks.com/2014/01/IMG_1053-0.jpg" height="140px" width="140px" alt="">
+				<dt class='col-md-4'>Shark Road Loop</dt>
+				  	<dd class='col-md-6'>Miami, Florida, United States <br> Super simple out and back loop in Everglades National Park.</dd>
+
+				<img class='thumbnail col-md-2' src="http://images.singletracks.com/2014/01/IMG_1053-0.jpg" height="140px" width="140px" alt="">
+				<dt class='col-md-4'>Oleta State Park</dt>
+				  	<dd class='col-md-6'>Miami, Florida, United States <br> Great Trail..... VERY technical trail. A whole lot of switchbacks....roots, rocks and more rocks. Turns...</dd>
+				
+				<img class='thumbnail col-md-2' src="http://images.singletracks.com/2014/01/IMG_1053-0.jpg" height="140px" width="140px" alt="">
+				<dt class='col-md-4'>Amelia Earhart Park</dt>
+				  	<dd class='col-md-6'>Miami, Florida, United States <br> This is a great park for novice riders and beginners, it is excellent to start...</dd>
+
+			</dl>
+
+		</div>
 
 	</div>
 
