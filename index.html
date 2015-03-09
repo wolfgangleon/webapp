@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CrossRoads</title>
+	<link rel="stylesheet" href="style/style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	<script src='script/jquery-2.1.3.min.js'></script>
+	<script src='script/app.js'></script>
+</head>
+<body>
+	
+	<div id="header">
+		<div id="container">
+			<div class="row">
+			  <div class="col-md-8">
+			  	<h1>CrossRoads</h1>
+			  </div>
+			  <div class="col-md-4">
+			  	<img src="img/logo.png" id="logo" alt="">
+			  </div>
+			</div>
+		</div>
+	</div>
+
+	<div id="interactive">
+
+		<nav class="navbar navbar-default">
+		  <div class="container-fluid">
+		    <!-- Brand and toggle get grouped for better mobile display -->
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <a class="navbar-brand" href="#">CrossRoads</a>
+		    </div>
+
+		    <!-- Collect the nav links, forms, and other content for toggling -->
+		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		      <ul class="nav navbar-nav">
+		      	<li><a href="#"> What?</a></li>
+		        <li><a href="#">Contact <span class="sr-only">(current)</span></a></li>
+		        <li><a href="#">Help</a></li>
+		      </ul>
+		    </div><!-- /.navbar-collapse -->
+		  </div><!-- /.container-fluid -->
+		</nav>
+
+		
+
+		<div id="search-parameters">
+
+			<div id="select-activities">
+
+				<h3>Select Activity:</h3>
+
+				<div class="btn-toolbar" role="toolbar" aria-label="...">
+					<div class="btn-group" role="group">
+					  <button type="button" class="btn btn-default">Mountain bike</button>
+					</div>
+					<div class="btn-group" role="group">
+					  <button type="button" class="btn btn-default">Hiking</button>
+					</div>
+					<div class="btn-group" role="group">
+					  <button type="button" class="btn btn-default">Running</button>
+					</div>
+					<div class="btn-group" role="group">
+						 <button type="button" class="btn btn-default">Campgrounds</button>
+					</div>
+					<div class="btn-group" role="group">
+					  <button type="button" class="btn btn-default">Ski / Snowboarding</button>
+					</div>
+				</div>
+			</div>
+
+			<div id="type-location">
+				<form class="form-inline row" id="get-location" onsubmit="return false">
+					<div class="form-group col-md-6">
+						<label for="selected-activity">Selected Activity:</label><br>
+						<button type="text" class="form-control" id="selected-activity" disabled="disabled" ></button>
+					</div>
+					<div class="form-group col-md-6">
+						<label for="location">Location:</label><br>
+					    <input type="text" class="form-control" id="location" placeholder="Type your city. Ex: Miami">
+					    <button type="submit" class="btn btn-default" id="submit-search">Search</button>
+					</div>
+					
+				</form>
+			</div>
+
+		</div>
+
+	</div>
+
+	<div id="results">
+
+		<div id="map"></div>
+
+	</div>
+
+</body>
+</html>
