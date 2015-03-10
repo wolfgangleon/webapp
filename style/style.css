@@ -53,7 +53,8 @@ table {
 }
 
 #header img {
-	margin-left: 50%;
+	margin: -5em 0% 0% 85%;
+	position: absolute;
 	height: 80px;
 }
 
@@ -129,14 +130,7 @@ table {
 
 #active-events, #meetup-groups {
 	margin-bottom: 2em;
-}
-
-#active-events {
-	border-radius:4px 0 0 4px;
-}
-
-#meetup-groups {
-	border-radius: 0 4px 4px 0;
+	border-radius: 0;
 }
 
 
