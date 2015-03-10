@@ -19,7 +19,8 @@ $(document).ready(function(){
 	})
 
 	$('#get-location').submit(function() {
-		$('#results dl').fadeIn();
+		$('#results').fadeIn();
+
 	})
 
 

@@ -88,7 +88,8 @@ table {
 }
 
 #select-activities .btn-toolbar .btn-group {
-	margin-left: 2em;
+	margin-left: 0.5em;
+	margin-bottom: 1em;
 }
 
 #type-location {
@@ -97,6 +98,11 @@ table {
 
 #location, #selected-activity, #submit-search {
 	margin-bottom: 1em;
+}
+
+
+#optional-list li {
+	display: inline-block;
 }
 
 
@@ -113,13 +119,18 @@ table {
 	width: 580px;
 }
 
-#results dl {
+#results {
 	display: none;
 }
 
 #list-result {
 	margin-top: 2em;
 }
+
+#active-events, #meetup-groups {
+	margin-bottom: 2em;
+}
+
 
 #list-result dd {
 	margin-bottom: 2em;
