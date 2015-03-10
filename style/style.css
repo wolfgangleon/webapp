@@ -78,7 +78,7 @@ table {
 }
 
 #select-activities, #type-location {
-	margin: 2em 8% 1.5em 8%;
+	margin: 2em 15% 1.5em;
 }
 
 #select-activities h3, label {
@@ -129,6 +129,14 @@ table {
 
 #active-events, #meetup-groups {
 	margin-bottom: 2em;
+}
+
+#active-events {
+	border-radius:4px 0 0 4px;
+}
+
+#meetup-groups {
+	border-radius: 0 4px 4px 0;
 }
 
 
