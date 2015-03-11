@@ -129,6 +129,23 @@ table {
 	display: none;
 }
 
+#backToTop {
+	position: fixed;
+	right: 10%;
+	bottom: 10%;
+	z-index: 10;
+	border-radius: 50%;
+	height: 4em;
+	width: 4em;
+	padding: 1em;
+	background-color: #e7e7e7;
+
+}
+
+.glyphicon {
+	font-size: 2em;
+}
+
 #list-result {
 	margin-top: 2em;
 }

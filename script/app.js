@@ -4,6 +4,14 @@ $(document).ready(function(){
 		$(this).toggleClass('active');
 	});
 
+	$(window).scroll(function(){
+	   if( $(document).scrollTop() > 0 ) {
+	      $('#backToTop').show();
+	   } else {
+	      $('#backToTop').hide();
+	   }
+	});
+
 	$('#interactive .navbar-brand').on('click', function() {
 		location.reload();
 	})
@@ -19,7 +27,10 @@ $(document).ready(function(){
 	})
 
 	$('#get-location').submit(function() {
+
 		$('#results').fadeIn();
+		
+		$('html,body').animate({scrollTop: $('#results').offset().top},800 );
 
 	})
 
