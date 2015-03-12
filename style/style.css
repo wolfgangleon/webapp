@@ -137,13 +137,10 @@ table {
 	border-radius: 50%;
 	height: 56px;
 	width: 56px;
-	padding: 1%;
+	padding: 0.5em;
 	background-color: #e7e7e7;
-
-}
-
-.glyphicon {
 	font-size: 2em;
+
 }
 
 #list-result {
