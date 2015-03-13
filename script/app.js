@@ -16,7 +16,7 @@ $(document).ready(function(){
 		$('#what').show().fadeIn('slow');
 	})
 
-	$('#what').mouseleave(function(){
+	$('#what').click(function(){
 		$('#app-info').hide();
 	})
 
