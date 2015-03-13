@@ -5,7 +5,7 @@ $(document).ready(function(){
 		$(this).toggleClass('active');
 	});
 
-	//Click on CrossRoad title to reload the page
+	//Click on New search title to reload the page
 	$('#interactive .navbar-brand').on('click', function() {
 		location.reload();
 	})
@@ -39,6 +39,10 @@ $(document).ready(function(){
 		$('#type-location').fadeIn();
 		$('#selected-activity').html( activity )
 		$('#location').focus();
+	})
+
+	$('#location').on('click',function() {
+		$(this).val('');
 	})
 
 	//Submit button Search
