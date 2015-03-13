@@ -10,14 +10,19 @@ $(document).ready(function(){
 		location.reload();
 	})
 
-	//Show nav bar elements info
+	//Show nav bar element What info
 	$('nav #link-what').mouseenter(function(){
-		$('#app-info').show();
 		$('#what').show().fadeIn('slow');
 	})
 
-	$('.panel-heading').click(function(){
-		$('#app-info').hide();
+	//Show nav bar element contact info
+	$('#link-contact').mouseenter(function(){
+		$('#contact').show().fadeIn('slow');
+	})
+
+	//Hide panel info
+	$('.panel').click(function(){
+		$(this).hide();
 	})
 
 	//Back to top button
@@ -162,6 +167,10 @@ $(document).ready(function(){
 						else {
 							thumbnail.attr('src', place.activities[0].thumbnail)
 						};
+
+					// Set item link
+					var imgLink = item.find('#location-link');
+						imgLink.attr('href', place.activities[0].url)
 
 					$('#search-result').append(item)
 

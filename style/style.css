@@ -119,19 +119,21 @@ table {
 	display: none;
 }
 
+
 #app-info li {
 	display: inline;
 }
 
 #app-info ul {
 	margin-bottom: 0px;
+	text-align: center;
 }
 
-#app-info #close {
+#app-info .close {
 	float: right;
 }
 
-#close:hover {
+.close:hover {
 	cursor: pointer;
 }
 
@@ -153,7 +155,7 @@ table {
 	background-repeat: no-repeat;
 	background-size: cover;
 	height: 450px;
-	width: 580px;
+	width: 520px;
 }
 
 #results {
@@ -162,7 +164,7 @@ table {
 
 #backToTop {
 	position: fixed;
-	right: 10%;
+	right: 5%;
 	bottom: 10%;
 	z-index: 10;
 	border-radius: 50%;
