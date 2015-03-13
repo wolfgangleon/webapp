@@ -111,6 +111,12 @@ table {
 	display: inline-block;
 }
 
+.panel {
+	position: absolute;
+	width: 50%;
+	margin-left: 5%;
+	z-index: 50;
+}
 
 /*-------------------------------------------------------------------------------------------------
 											Results
@@ -160,11 +166,11 @@ table {
 }
 
 
-#list-result dd {
+#search-result dd {
 	margin-bottom: 2em;
 }
 
-#list-result img {
+#search-result img {
 	margin-left:15px; 
 	margin-bottom: 2em
 }

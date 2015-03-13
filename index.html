@@ -36,15 +36,27 @@
 		    
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		      <ul class="nav navbar-nav">
-		      	<li><a href="#"> What?</a></li>
-		        <li><a href="#">Contact <span class="sr-only">(current)</span></a></li>
-		        <li><a href="#">Help</a></li>
+		      	<li><a href="#" id="link-what"> What?</a></li>
+		        <li><a href="#" id='link-contact'>Contact <span class="sr-only">(current)</span></a></li>
+		        <li><a href="#" id='link-help'>Help</a></li>
 		      </ul>
 		    </div>
 		  </div>
-		</nav>
 
-		
+		  	<div class="hidden">
+
+				<div class="panel panel-default" id="what">
+					<div class="panel-heading">
+				    	<h3 class="panel-title">What?  <button class="btn" id='clear'>x</button> </h3>
+				  	</div>
+				  	<div class="panel-body">
+				    	CrossRoads is an application that shows information about thousands of outdoor recreation points of interest including trails, campgrounds, and ski resorts. Find photos, location, and descriptions of every place you looked for.
+				  	</div>
+				</div>
+				
+			</div>
+			
+		</nav>
 
 		<div id="search-parameters">
 
@@ -66,7 +78,7 @@
 						 <button type="button" class="btn btn-default">Campgrounds</button>
 					</div>
 					<div class="btn-group" role="group">
-					  <button type="button" class="btn btn-default">Ski / Snowboarding</button>
+					  <button type="button" class="btn btn-default">Snow</button>
 					</div>
 				</div>
 			</div>
@@ -91,6 +103,7 @@
 		<div id="map"></div>
 
 		<div id="results">
+
 			<a href="#top">	
 				<div id="backToTop">
 					<span class='glyphicon glyphicon-menu-up'></span>
@@ -104,51 +117,24 @@
 
 			<dl id="list-result">
 
-				<div class="template hidden row">
-					<div class="col-md-3" id="location-image">
-						<img class='thumbnail' src="http://images.singletracks.com/2014/01/IMG_1053-0.jpg" height="140px" width="140px" alt="">
+				<div class="template hidden">
+
+					<div class="row" id="location-info">
+						<div class="col-md-3">
+							<img id="location-image" class='thumbnail' src="" height="140px" width="140px" alt="">
+						</div>
+
+						<div class="col-md-9">
+							<dt id='location-name'></dt>
+								<dd id='location-description'></dd>
+						</div>
 					</div>
 
-					<div class="col-md-9" id="location-description">
-						<dt>Lorem</dt>
-						 	<dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime et alias in dolorem provident iste assumenda quas excepturi esse facilis iusto rerum, est voluptates odio praesentium repellendus, quia fugit veritatis.</dd>
-					 </div>
-				 </div>
-			
-				<div class="row">
-					<div class="col-md-3" id="location-image">
-						<img class='thumbnail' src="http://images.singletracks.com/2014/01/IMG_1053-0.jpg" height="140px" width="140px" alt="">
-					</div>
-
-					<div class="col-md-9" id="location-description">
-						<dt>Bird Basin Park</dt>
-						 	<dd>Miami, Florida, United States <br> Best to do is park on the side road adjacent to Bird Road. Find an...</dd>
-					 </div>
-				 </div>
-
-				<div class="row">
-					<div class="col-md-3" id="location-image">
-						<img class='thumbnail' src="http://images.singletracks.com/2014/01/IMG_1053-0.jpg" height="140px" width="140px" alt="">
-					</div>
-
-					<div class="col-md-9" id="location-description">
-						<dt>Florida City, Southern Glades Trail</dt>
-						 	<dd>Miami, Florida, United States <br> Terrain: Largely flat but rough, can be technical where limestone is abundant.The North trail is...</dd>
-					</div>
 				</div>
-				
-				<div class="row">
-					<div class="col-md-3" id="location-image">
-						<img class='thumbnail' src="http://images.singletracks.com/2014/01/IMG_1053-0.jpg" height="140px" width="140px" alt="">
-					</div>
 
-					<div class="col-md-9" id="location-description">
-						<dt>Shark Road Loop</dt>
-							<dd>Miami, Florida, United States <br> Super simple out and back loop in Everglades National Park.</dd>
-					</div>
-				</div>
-			
 			</dl>
+
+			<div id='search-result'></div>
 
 		</div>
 
