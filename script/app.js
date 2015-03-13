@@ -12,12 +12,23 @@ $(document).ready(function(){
 
 	//Show nav bar element What info
 	$('nav #link-what').mouseenter(function(){
+		$('#help').hide();
+		$('#contact').hide()
 		$('#what').show().fadeIn('slow');
 	})
 
 	//Show nav bar element contact info
 	$('#link-contact').mouseenter(function(){
+		$('#help').hide();
+		$('#what').hide();
 		$('#contact').show().fadeIn('slow');
+	})
+
+	//Show nav bar element help info
+	$('#link-help').mouseenter(function(){
+		$('#contact').hide();
+		$('#what').hide();
+		$('#help').show().fadeIn('slow');
 	})
 
 	//Hide panel info
@@ -171,7 +182,7 @@ $(document).ready(function(){
 					// Set item link
 					var imgLink = item.find('#location-link');
 						imgLink.attr('href', place.activities[0].url)
-
+					
 					$('#search-result').append(item)
 
 				});

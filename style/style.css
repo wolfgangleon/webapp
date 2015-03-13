@@ -119,12 +119,16 @@ table {
 	display: none;
 }
 
-
-#app-info li {
+.panel-heading li {
 	display: inline;
 }
 
-#app-info ul {
+
+#app-info #contact li {
+	display: inline;
+}
+
+#app-info #contact ul {
 	margin-bottom: 0px;
 	text-align: center;
 }
