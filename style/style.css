@@ -166,13 +166,8 @@ table {
 }
 
 
-#search-result dd {
+#search-result dd,img {
 	margin-bottom: 2em;
-}
-
-#search-result img {
-	margin-left:15px; 
-	margin-bottom: 2em
 }
 
 
