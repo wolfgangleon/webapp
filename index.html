@@ -43,14 +43,18 @@
 		    </div>
 		  </div>
 
-		  	<div class="hidden">
+		  	<div class="secret" id="app-info">
 
 				<div class="panel panel-default" id="what">
 					<div class="panel-heading">
-				    	<h3 class="panel-title">What?  <button class="btn" id='clear'>x</button> </h3>
+				    	<h3 class="panel-title">What? </h3>
 				  	</div>
 				  	<div class="panel-body">
-				    	CrossRoads is an application that shows information about thousands of outdoor recreation points of interest including trails, campgrounds, and ski resorts. Find photos, location, and descriptions of every place you looked for.
+				    	CrossRoads is a web application that shows information about thousands of outdoor recreation points of interest including trails, campgrounds, and ski resorts. Find photos, location, and descriptions of every place you looked for. <br><br>
+
+				    	All of our trails data comes from <a href="http://www.trailapi.com">www.trailAPI.com Copyright 2012 TrailAPI.</a> <br><br>
+
+				    	If you're interested in adding data to their data base go to <a href="http://bluespruce.freshdesk.com/support/solutions/articles/68781-adding-data-to-the-trail-api">Blue Spruce Ventures</a> and follow their directions.
 				  	</div>
 				</div>
 				
@@ -91,7 +95,7 @@
 					</div>
 					<div class="form-group col-md-6">
 						<label for="location">Location:</label><br>
-					    <input type="text" class="form-control" id="location" placeholder="Type your city. Ex: Miami" required>
+					    <input type="text" class="form-control" id="location" placeholder="State or city. (US only)" required>
 					    <button type="submit" class="btn btn-default" id="submit-search">Search</button>
 					</div>
 					

@@ -11,10 +11,14 @@ $(document).ready(function(){
 	})
 
 	//Show nav bar elements info
-	$('nav #link-what').on('click', function(){
-		$('#what').fadeIn();
+	$('nav #link-what').mouseenter(function(){
+		$('#app-info').show();
+		$('#what').show().fadeIn('slow');
 	})
 
+	$('#what').mouseleave(function(){
+		$('#app-info').hide();
+	})
 
 	//Back to top button
 	$(window).scroll(function(){
@@ -47,17 +51,79 @@ $(document).ready(function(){
 		$('html,body').animate({scrollTop: $('#results').offset().top},800 );
 
 		var activity = $('#selected-activity').html(),
-			location = $('#location').val();
+			
+			statesLoc = [
+            'alabama',
+            'alaska',
+            'arizona',
+            'arkansas',
+            'california',
+            'colorado',
+            'connecticut',
+            'delaware',
+            'district Of Columbia',
+            'florida',
+            'georgia',
+            'hawaii',
+            'idaho',
+            'illinois',
+            'indiana',
+            'iowa',
+            'kansas',
+            'kentucky',
+            'louisiana',
+            'maine',
+            'maryland',
+            'massachusetts',
+            'michigan',
+            'minnesota',
+            'mississippi',
+            'missouri',
+            'montana',
+            'nebraska',
+            'nevada',
+            'new Hampshire',
+            'new Jersey',
+            'new Mexico',
+            'new York',
+            'north Carolina',
+            'north Dakota',
+            'ohio',
+            'oklahoma',
+            'oregon',
+            'pennsylvania',
+            'rhode Island',
+            'south Carolina',
+            'south Dakota',
+            'tennessee',
+            'texas',
+            'utah',
+            'vermont',
+            'virginia',
+            'washington',
+            'west Virginia',
+            'wisconsin',
+            'wyoming',
+        ];
 
-			console.log('selected-activity:' + activity)
-			console.log('location:'+ location)
+        if ( $.inArray( $('#location').val(), statesLoc ) > -1 ) {
 
+        	var state = $('#location').val()
+
+        }
+
+        else {
+        	var city = $('#location').val()
+        };
+       
+		// Ajax trail API
 		var params = {	
 			api_key:'3fb0455c6af396a7fcfff852600cb619',
-			limit:25,
+			limit:10,
 			q:{
 				activities_activity_type_name_cont:activity, 
-				city_cont:location
+				state_cont:state,
+				city_cont:city
 			} 
 		  }
 				
