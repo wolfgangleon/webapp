@@ -16,7 +16,7 @@ $(document).ready(function(){
 		$('#what').show().fadeIn('slow');
 	})
 
-	$('#what').click(function(){
+	$('.panel-heading').click(function(){
 		$('#app-info').hide();
 	})
 

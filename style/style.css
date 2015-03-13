@@ -118,6 +118,23 @@ table {
 .secret {
 	display: none;
 }
+
+#app-info li {
+	display: inline;
+}
+
+#app-info ul {
+	margin-bottom: 0px;
+}
+
+#app-info #close {
+	float: right;
+}
+
+#close:hover {
+	cursor: pointer;
+}
+
 .panel {
 	position: absolute;
 	width: 70%;
