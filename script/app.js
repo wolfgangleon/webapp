@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+	alert("In the meantime, we're supporting only information related to: Mountain Biking, Hiking and Camping. We apologize for the inconvenience caused.")
+
 	//Hover over nav elements
 	$('#interactive .navbar li').hover(function() {
 		$(this).toggleClass('active');
@@ -126,6 +128,8 @@ $(document).ready(function(){
             'wyoming',
         ];
 
+        console.log(activity)
+
         if ( $.inArray( $('#location').val(), statesLoc ) > -1 ) {
 
         	var state = $('#location').val()
@@ -154,9 +158,10 @@ $(document).ready(function(){
 			dataType:'jsonp'}).done(function(result){
 				console.log('results: ' , result.places )
 
-				$.each(result.places, function(i,place) {
+			 	$.each(result.places, function(i,place) {
 					console.log('place:', place)
 					console.log('activities:' , place.activities[0].description )
+				//	console.log('thumbnail: ', place.activitie )
 
 					var item = $('.template #location-info').clone();
 
@@ -182,10 +187,10 @@ $(document).ready(function(){
 					// Set item link
 					var imgLink = item.find('#location-link');
 						imgLink.attr('href', place.activities[0].url)
-					
+
 					$('#search-result').append(item)
 
-				});
+				});				
 
 			});
 

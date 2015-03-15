@@ -124,13 +124,18 @@ table {
 }
 
 
-#app-info #contact li {
+#app-info #contact #panel-contact li {
 	display: inline;
+	margin-right: 2em;
 }
 
 #app-info #contact ul {
 	margin-bottom: 0px;
 	text-align: center;
+}
+
+#contact .panel-heading {
+	text-align: left !important;
 }
 
 #app-info .close {
