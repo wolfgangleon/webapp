@@ -2,19 +2,12 @@ $(document).ready(function(){
 
 	//Set google maps
 	var mapOptions = {
-	    center: new google.maps.LatLng(39.879204,-106.016998),
-	    zoom: 10,
-	    mapTypeId: google.maps.MapTypeId.TERRAIN
-	};
+	    center: new google.maps.LatLng(38.4694497,-98.6489868),
+	    zoom: 4,
+	    mapTypeId: google.maps.MapTypeId.ROADMAP
+	},
 
-	new google.maps.Map(document.getElementById('map'), mapOptions);
-
-	var markerOptions = {
-	    position: new google.maps.LatLng(39.879204,-106.016998)
-	};
-	
-	var marker = new google.maps.Marker(markerOptions);
-		//marker.setMap( $('#map') );
+	map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
 	//Hover over nav elements
 	$('#interactive .navbar li').hover(function() {
@@ -49,6 +42,10 @@ $(document).ready(function(){
 
 	//Hide panel info
 	$('.panel').click(function(){
+		$(this).hide();
+	})
+
+	$('.panel').mouseleave(function(){
 		$(this).hide();
 	})
 
@@ -157,7 +154,7 @@ $(document).ready(function(){
 		// Ajax trail API
 		var params = {	
 			api_key:'3fb0455c6af396a7fcfff852600cb619',
-			limit:10,
+			limit:15,
 			q:{
 				activities_activity_type_name_cont:activity, 
 				state_cont:state,
@@ -202,6 +199,23 @@ $(document).ready(function(){
 					var imgLink = item.find('#location-link');
 						imgLink.attr('href', place.activities[0].url)
 
+					// Set marker on map
+					console.log('place.lat:', place.lat);
+					console.log('place.lon:',place.lon)
+
+					if ( place.lat || place.lon != 0 ) {
+
+						var marker = new google.maps.Marker({
+								position:  new google.maps.LatLng(place.lat,place.lon),
+								});
+						marker.setMap(map);
+					}
+
+					else {
+						return null
+					};
+
+					// Append the item to DOM	
 					$('#search-result').append(item)
 
 				});				
