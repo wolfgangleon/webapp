@@ -94,8 +94,12 @@ table {
 }
 
 #select-activities .btn-toolbar .btn-group {
-	margin-left: 0.5em;
+	margin-left: 2em;
 	margin-bottom: 1em;
+}
+
+#activity-options {
+	margin-left: 15%;
 }
 
 #type-location {
@@ -160,9 +164,7 @@ table {
 
 #map {
 	margin:0 auto;
-	background: url('http://programacion.net/files/googlemaps.png');
-	background-repeat: no-repeat;
-	background-size: cover;
+	background-color: #ffffff;
 	height: 450px;
 	width: 520px;
 }

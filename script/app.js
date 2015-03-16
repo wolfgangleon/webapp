@@ -1,6 +1,20 @@
 $(document).ready(function(){
 
-	alert("In the meantime, we're supporting only information related to: Mountain Biking, Hiking and Camping. We apologize for the inconvenience caused.")
+	//Set google maps
+	var mapOptions = {
+	    center: new google.maps.LatLng(39.879204,-106.016998),
+	    zoom: 10,
+	    mapTypeId: google.maps.MapTypeId.TERRAIN
+	};
+
+	new google.maps.Map(document.getElementById('map'), mapOptions);
+
+	var markerOptions = {
+	    position: new google.maps.LatLng(39.879204,-106.016998)
+	};
+	
+	var marker = new google.maps.Marker(markerOptions);
+		//marker.setMap( $('#map') );
 
 	//Hover over nav elements
 	$('#interactive .navbar li').hover(function() {
