@@ -130,7 +130,9 @@ table {
 
 #app-info #contact #panel-contact li {
 	display: inline;
-	margin-right: 2em;
+	margin: 0 1em;
+	font-size: 3em;
+	text-align: center;
 }
 
 #app-info #contact ul {
