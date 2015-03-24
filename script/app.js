@@ -172,7 +172,6 @@ $(document).ready(function(){
 			 	$.each(result.places, function(i,place) {
 					console.log('place:', place)
 					console.log('activities:' , place.activities[0].description )
-				//	console.log('thumbnail: ', place.activitie )
 
 					var item = $('.template #location-info').clone();
 
@@ -200,15 +199,26 @@ $(document).ready(function(){
 						imgLink.attr('href', place.activities[0].url)
 
 					// Set marker on map
-					console.log('place.lat:', place.lat);
-					console.log('place.lon:',place.lon)
 
-					if ( place.lat || place.lon != 0 ) {
+					if ( place.lat || place.lon != 0 ) { //checks for lat and long error
 
 						var marker = new google.maps.Marker({
 								position:  new google.maps.LatLng(place.lat,place.lon),
 								});
+
 						marker.setMap(map);
+
+						var infoWindowOptions = {
+						    content: place.name
+						    		 
+						};
+
+						var infoWindow = new google.maps.InfoWindow(infoWindowOptions);
+						google.maps.event.addListener(marker,'click',function(e){
+						  
+						  infoWindow.open(map, marker);
+						  
+						});
 					}
 
 					else {
