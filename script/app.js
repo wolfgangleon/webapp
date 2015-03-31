@@ -123,6 +123,7 @@ $(document).ready(function(){
 		$('#actDrop').hide();
 		$('#selected-activity').fadeIn().html( activity )
 		$('#location').removeAttr('disabled')
+		$('#submit-search').removeAttr('disabled')
 		$('#location').focus();
 	})
 
@@ -156,17 +157,49 @@ $(document).ready(function(){
 
 		// Set item link
 		var imgLink = item.find('#location-link');
-			imgLink.attr('href', place.activities[0].url)
+			imgLink.attr('href', place.activities[0].url);
+
+		// Set marker on map
+		if ( place.lat || place.lon != 0 ) { //checks for lat and long errors
+
+			var marker = new google.maps.Marker({
+				position:  new google.maps.LatLng(place.lat,place.lon),
+				});
+
+			marker.setMap(map);
+			map.setCenter({
+				lat:place.lat,
+				lng:place.lon,
+			});
+			map.setZoom(6);
+		
+		} 
+		else { 
+			return null
+		};
+
+		var infoWindowOptions = {
+						    content: place.name	    		 
+						};
+
+		var infoWindow = new google.maps.InfoWindow(infoWindowOptions);
+			google.maps.event.addListener(marker,'click',function(e){
+			  
+			  infoWindow.open(map, marker),
+			  $('#search-result').append(item) // append item to DOM
+			  
+			});
 
 		return item;
 	};
 
 	//Submit button Search
-	$('#get-location').submit(function() {
+	$('#get-location').submit(function(e) {
+		e.preventDefault();
 
 		$('#search-result').html('');
 
-	//	$('#results').fadeIn();
+		$('#results').fadeIn();
 		
 		$('html,body').animate({scrollTop: $('#results').offset().top},800 );
 
@@ -203,46 +236,7 @@ $(document).ready(function(){
 				console.log('results: ' , result.places )
 
 			 	$.each(result.places, function(i,place) {
-					console.log('place:', place)
-					console.log('activities:' , place.activities[0].description )
-
 					var itemInfo = setInfo(place)
-
-					// Set marker on map
-
-					if ( place.lat || place.lon != 0 ) { //checks for lat and long errors
-
-						var marker = new google.maps.Marker({
-							position:  new google.maps.LatLng(place.lat,place.lon),
-							});
-
-						marker.setMap(map);
-						map.setCenter({
-							lat:place.lat,
-							lng:place.lon,
-						});
-						map.setZoom(6);
-					
-					} 
-					else { 
-						return null
-					};
-
-					var infoWindowOptions = {
-						    content: place.name
-						    		 
-						};
-
-					var infoWindow = new google.maps.InfoWindow(infoWindowOptions);
-						google.maps.event.addListener(marker,'click',function(e){
-						  
-						  infoWindow.open(map, marker);
-						  
-						});
-
-					// Append the item to DOM	
-					$('#search-result').append(itemInfo)
-
 				});				
 
 			});

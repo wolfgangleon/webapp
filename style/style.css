@@ -123,23 +123,17 @@ table {
 	z-index: 0
 }
 
-#results {
-	display: none;
-}
-
-#backToTop {
-	position: fixed;
-	right: 5%;
-	bottom: 10%;
+#search-result {
+	position: absolute;
 	z-index: 10;
-	border-radius: 50%;
-	height: 56px;
-	width: 56px;
-	padding: 0.5em;
-	background-color: #e7e7e7;
-	font-size: 2em;
-
+	width: 50%;
+	background-color: white;
+	border-radius: 4px 4px 4px 4px;
+	padding: 5em;
+	top: 40%;
+	left: 10%
 }
+
 
 #list-result {
 	margin-top: 2em;
