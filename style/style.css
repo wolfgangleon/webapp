@@ -46,77 +46,20 @@ table {
 /*----------------------------------------------------------------------------------------------------
 												Header
 ----------------------------------------------------------------------------------------------------*/
-
-
 #header {
-	margin-top: 1em;
+	width: 100%;
 }
-
-#header img {
-	margin: -8em 0% 0% 83%;
-	position: absolute;
-	height: 80px;
-}
-
-#header h1 {
-	margin-left: 10%;
-	text-transform: uppercase;
-	line-height: 3em;
-}
-
-	
-/*----------------------------------------------------------------------------------------------------
-											Search parameter Section
----------------------------------------------------------------------------------------------------*/
-
-
-#interactive {
-	margin: 2em auto;
-	width: 60%;
-}
-
-#interactive .navbar .navbar-nav {
-	float:right;
-}
-
-#select-activities {
-	margin: 2em 15% 1.5em;
-}
-
- #type-location {
- 	margin: 2em 10% 1.5em;
- }
-
-#select-activities h3, label {
-	font-size: 1.5em;
-	margin-bottom: 1em;
-	font-weight: 400;
-}
-
-#select-activities .btn-toolbar .btn-group {
-	margin-left: 2em;
-	margin-bottom: 1em;
-}
-
-#activity-options {
-	margin-left: 15%;
-}
-
-#type-location {
-	display: none;
-}
-
-#location, #selected-activity, #submit-search {
-	margin-bottom: 1em;
+.navbar {
+	margin-bottom: 0 !important;
+	border-radius: 0 !important;
 }
 
 #location {
 	text-transform: capitalize;
 }
 
-
-#event-list li {
-	display: inline-block;
+.navbar .navbar-nav {
+	float:right;
 }
 
 .secret {
@@ -134,6 +77,7 @@ table {
 	font-size: 3em;
 	text-align: center;
 }
+
 #app-info #what p {
 	text-align: center;
 	margin-top: 1em;
@@ -165,6 +109,7 @@ table {
 	z-index: 50;
 }
 
+	
 /*-------------------------------------------------------------------------------------------------
 											Results
 --------------------------------------------------------------------------------------------------*/
@@ -172,8 +117,10 @@ table {
 #map {
 	margin:0 auto;
 	background-color: #ffffff;
-	height: 450px;
-	width: 520px;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	z-index: 0
 }
 
 #results {
