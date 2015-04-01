@@ -5,7 +5,10 @@ $(document).ready(function(){
 	    center: new google.maps.LatLng(38.4694497,-98.6489868),
 	    zoom: 5,
 	    streetViewControl: false,
-	    mapTypeId: google.maps.MapTypeId.ROADMAP
+	    mapTypeId: google.maps.MapTypeId.ROADMAP,
+	    zoomControlOptions: {
+	      style: google.maps.ZoomControlStyle.SMALL
+	    }
 	},
 
 	map = new google.maps.Map(document.getElementById('map'), mapOptions);
@@ -162,7 +165,7 @@ $(document).ready(function(){
 		// Set marker on map
 		if ( place.lat || place.lon != 0 ) { //checks for lat and long errors
 
-			var marker = new google.maps.Marker({
+		var marker = new google.maps.Marker({
 				position:  new google.maps.LatLng(place.lat,place.lon),
 				});
 
@@ -171,6 +174,7 @@ $(document).ready(function(){
 				lat:place.lat,
 				lng:place.lon,
 			});
+			map.panBy(-380,0);
 			map.setZoom(6);
 		
 		} 
@@ -186,6 +190,7 @@ $(document).ready(function(){
 			google.maps.event.addListener(marker,'click',function(e){
 			  
 			  infoWindow.open(map, marker),
+			  $('#search-result').html(''),
 			  $('#search-result').append(item) // append item to DOM
 			  
 			});
