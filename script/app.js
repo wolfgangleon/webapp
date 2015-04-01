@@ -108,15 +108,6 @@ $(document).ready(function(){
 		$(this).hide();
 	})
 
-	//Back to top button
-	$(window).scroll(function(){
-	   if( $(document).scrollTop() > 0 ) {
-	      $('#backToTop').show();
-	   } else {
-	      $('#backToTop').hide();
-	   }
-	});
-
 	
 	//Button Selects an activtity
 	$('.activity').on('click', function(){
@@ -127,7 +118,6 @@ $(document).ready(function(){
 		$('#selected-activity').fadeIn().html( activity )
 		$('#location').removeAttr('disabled')
 		$('#submit-search').removeAttr('disabled')
-		$('#location').focus();
 	})
 
 	$('#location').on('click',function() {
@@ -205,8 +195,7 @@ $(document).ready(function(){
 		$('#search-result').html('');
 
 		$('#results').fadeIn();
-		
-		$('html,body').animate({scrollTop: $('#results').offset().top},800 );
+
 
 		var activity = $('#selected-activity').html();
 			
