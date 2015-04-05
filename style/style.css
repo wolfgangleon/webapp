@@ -52,6 +52,7 @@ table {
 .navbar {
 	margin-bottom: 0 !important;
 	border-radius: 0 !important;
+	z-index: 50;
 }
 
 #location {
@@ -60,6 +61,10 @@ table {
 
 .navbar .navbar-nav {
 	float:right;
+}
+
+#search-item {
+	padding-left: 20%;
 }
 
 .secret {
@@ -124,33 +129,28 @@ table {
 }
 
 #search-result {
+	display: none;
 	position: absolute;
 	z-index: 10;
 	width: 50%;
 	background-color: white;
 	border-radius: 4px 4px 4px 4px;
-	padding: 5em;
-	top: 40%;
+	padding: 2em;
+	top: 20%;
 	left: 10%
 }
 
+#location-info .panel-heading {
+	margin-top: -1em;
+}
+
+#location-info .col-md-9 {
+	padding-left: 4em;
+}
 
 #list-result {
 	margin-top: 2em;
 }
-
-#active-events, #meetup-groups {
-	margin-bottom: 2em;
-}
-
-#active-events {
-	border-right: 0;
-}
-
-#meetup-groups {
-	border-left: 0;
-}
-
 
 #search-result dd,img {
 	margin-bottom: 2em;

@@ -155,6 +155,10 @@ $(document).ready(function(){
 		// Set marker on map
 		if ( place.lat || place.lon != 0 ) { //checks for lat and long errors
 
+		if ( marker != null ) {
+			marker.remove();
+		}
+
 		var marker = new google.maps.Marker({
 				position:  new google.maps.LatLng(place.lat,place.lon),
 				});
@@ -164,7 +168,6 @@ $(document).ready(function(){
 				lat:place.lat,
 				lng:place.lon,
 			});
-			map.panBy(-380,0);
 			map.setZoom(6);
 		
 		} 
@@ -180,8 +183,14 @@ $(document).ready(function(){
 			google.maps.event.addListener(marker,'click',function(e){
 			  
 			  infoWindow.open(map, marker),
+			  map.setCenter({
+				lat:place.lat,
+				lng:place.lon,
+				}),
+			  $('#search-result').show(),
 			  $('#search-result').html(''),
-			  $('#search-result').append(item) // append item to DOM
+			  $('#search-result').append(item), // append item to DOM
+			  map.panBy(-300,0)
 			  
 			});
 
@@ -192,7 +201,7 @@ $(document).ready(function(){
 	$('#get-location').submit(function(e) {
 		e.preventDefault();
 
-		$('#search-result').html('');
+		$('#search-result').hide();
 
 		$('#results').fadeIn();
 
