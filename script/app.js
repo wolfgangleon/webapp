@@ -14,7 +14,7 @@ $(document).ready(function(){
 	map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
 	// states 
-	 var statesLoc = [
+	var statesLoc = [
             'alabama',
             'alaska',
             'arizona',
@@ -23,7 +23,7 @@ $(document).ready(function(){
             'colorado',
             'connecticut',
             'delaware',
-            'district Of Columbia',
+            'district of columbia',
             'florida',
             'georgia',
             'hawaii',
@@ -44,26 +44,26 @@ $(document).ready(function(){
             'montana',
             'nebraska',
             'nevada',
-            'new Hampshire',
-            'new Jersey',
-            'new Mexico',
-            'new York',
-            'north Carolina',
-            'north Dakota',
+            'new hampshire',
+            'new jersey',
+            'new mexico',
+            'new york',
+            'north carolina',
+            'north dakota',
             'ohio',
             'oklahoma',
             'oregon',
             'pennsylvania',
-            'rhode Island',
-            'south Carolina',
-            'south Dakota',
+            'rhode island',
+            'south carolina',
+            'south dakota',
             'tennessee',
             'texas',
             'utah',
             'vermont',
             'virginia',
             'washington',
-            'west Virginia',
+            'west virginia',
             'wisconsin',
             'wyoming',
         ];
@@ -102,10 +102,14 @@ $(document).ready(function(){
 	//Hide panel info
 	$('.panel').click(function(){
 		$(this).hide();
-	})
+	});
 
 	$('.panel').mouseleave(function(){
 		$(this).hide();
+	});
+
+	$('#search-result .close').on('click', function() {
+		$(this).parent().remove();
 	})
 
 	
@@ -155,13 +159,11 @@ $(document).ready(function(){
 		// Set marker on map
 		if ( place.lat || place.lon != 0 ) { //checks for lat and long errors
 
-		if ( marker != null ) {
-			marker.remove();
-		}
+			var markers = [];
 
-		var marker = new google.maps.Marker({
-				position:  new google.maps.LatLng(place.lat,place.lon),
-				});
+			var marker = new google.maps.Marker({
+					position:  new google.maps.LatLng(place.lat,place.lon),
+					});
 
 			marker.setMap(map);
 			map.setCenter({
@@ -169,28 +171,26 @@ $(document).ready(function(){
 				lng:place.lon,
 			});
 			map.setZoom(6);
-		
-		} 
-		else { 
-			return null
-		};
+			markers.push(marker)		
+		}
 
 		var infoWindowOptions = {
 						    content: place.name	    		 
 						};
 
 		var infoWindow = new google.maps.InfoWindow(infoWindowOptions);
+
 			google.maps.event.addListener(marker,'click',function(e){
-			  
-			  infoWindow.open(map, marker),
-			  map.setCenter({
+
+				infoWindow.open(map, marker),
+				map.setCenter({
 				lat:place.lat,
 				lng:place.lon,
 				}),
-			  $('#search-result').show(),
-			  $('#search-result').html(''),
-			  $('#search-result').append(item), // append item to DOM
-			  map.panBy(-300,0)
+				$('#search-result').show(),
+				$('#search-result').html(''),
+				$('#search-result').append(item), // append item to DOM
+				map.panBy(-300,0)
 			  
 			});
 
@@ -205,15 +205,11 @@ $(document).ready(function(){
 
 		$('#results').fadeIn();
 
-
 		var activity = $('#selected-activity').html();
-			
-        console.log(activity)
-
+			     
         if ( $.inArray( $('#location').val(), statesLoc ) > -1 ) {
 
         	var state = $('#location').val()
-
         }
 
         else {
