@@ -108,10 +108,6 @@ $(document).ready(function(){
 		$(this).hide();
 	});
 
-	$('#search-result .close').on('click', function() {
-		$(this).parent().remove();
-	})
-
 	
 	//Button Selects an activtity
 	$('.activity').on('click', function(){
@@ -234,9 +230,15 @@ $(document).ready(function(){
 			dataType:'jsonp'}).done(function(result){
 				console.log('results: ' , result.places )
 
-			 	$.each(result.places, function(i,place) {
-					var itemInfo = setInfo(place)
-				});				
+				if ( result.places.length != 0 ) {
+
+				 	$.each(result.places, function(i,place) {
+						var itemInfo = setInfo(place)
+					});				
+			 	}
+			 	else {
+			 		alert('Try another location or check typing errors');
+			 	}
 
 			});
 
