@@ -9,9 +9,9 @@ $(document).ready(function(){
 	    zoomControlOptions: {
 	      style: google.maps.ZoomControlStyle.SMALL
 	    }
-	},
+	};
 
-	map = new google.maps.Map(document.getElementById('map'), mapOptions);
+	var map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
 	// states 
 	var statesLoc = [
